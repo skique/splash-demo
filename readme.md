@@ -150,5 +150,5 @@ SPIDER_MIDDLEWARES = {
 
 
 ## 参考资料
--《精通Scrapy网络爬虫》第11章
--《Python 3网络爬虫实战》第7章
+- 《精通Scrapy网络爬虫》第11章   
+- 《Python 3网络爬虫实战》第7章
