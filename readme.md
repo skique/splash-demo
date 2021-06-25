@@ -98,7 +98,7 @@ end
 
 ## 在shell中使用splash脚本   
 建议在shell脚本中复制粘贴示例代码，因为在vscode中直接运行没有返回值
-1. splash.py脚本: 使用requests库调用render.html端点服务对页面http://quotes.toscrape.com/js/进行渲染的示例代码
+1. splash.py脚本: 使用requests库调用render.html端点服务对页面 [http://quotes.toscrape.com/js/](http://quotes.toscrape.com/js/) 进行渲染的示例代码
 2. splash_execute脚本：利用Splash的execute端点提供的服务可以实现在页面中执行一些用户自定义的JavaScript代码这样的功能
 3. monilogin脚本：尝试利用Splash的execute端点，在页面中执行一些用户自定义的JavaScript代码，比如登陆功能，登陆后返回页面html。
 
@@ -135,7 +135,10 @@ SPIDER_MIDDLEWARES = {
 ### 实战一：爬取toscrape中的名人名言
 创建一个quote的爬虫   
 `scrapy genspider quote quotes.toscrape.com`   
-在这个案例中，我们只需使用Splash的render.html端点渲染页面，再进行爬取即可实现QuoteSpider，具体代码见spiders/quote.py
+在这个案例中，我们只需使用Splash的render.html端点渲染页面，再进行爬取即可实现QuoteSpider，具体代码见spiders/quote.py。
+
+运行这个爬虫并保存文件
+`scrapy crawl quote -o quote.csv`
 
 ### 实战二：爬取京东商城中的书籍信息
 
@@ -146,8 +149,10 @@ SPIDER_MIDDLEWARES = {
 创建一个jdbook的爬虫：
 `scrapy genspider jdbook search.jd.com`   
 
-经上述分析，在爬取每一个书籍列表页面时都需要执行一段JavaScript代码，以让全部书籍加载，因此选用execute端点完成该任务，实现JDBookSpider代码见spiders/jdbook.py：
+经上述分析，在爬取每一个书籍列表页面时都需要执行一段JavaScript代码，以让全部书籍加载，因此选用execute端点完成该任务，实现JDBookSpider代码见spiders/jdbook.py。
 
+运行这个爬虫并保存文件
+`scrapy crawl jdbook -o books.csv`
 
 ## 参考资料
 - 《精通Scrapy网络爬虫》第11章   
