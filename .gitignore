@@ -1,0 +1,4 @@
+/.idea/
+*/__pycache__
+lianjiahouse/spiders/__pycache__
+/images
